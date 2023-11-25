@@ -13,11 +13,9 @@ const App = () => {
     const [Results, setResults] = useState([])
 
 
-    const apiKey = "0890c0e9739f075f5dca132d9ee4c344"; // Replace with your actual API key
-    // const city = 'CITY_NAME'; // Replace with the desired city name
+    const apiKey = "0773c88dfdb9ebe4a4be74fe4c1c4ded";
     const apiUrl = `http://api.weatherstack.com/current?access_key=${apiKey}&query=${city}`;
-    // const apiUrl = `http://api.weatherstack.com/current?access_key=${apiKey}&query=new york`;
-    // const apiUrl = true
+    // const apiUrl = `http://api.weatherstack.com/current?access_key=${apiKey}&query=${city}`;
 
 
     useEffect(() => {
@@ -63,7 +61,17 @@ const App = () => {
                     <div className="select">
                         <label className="label" htmlFor="question">Select the City of your Choice</label>
                         <input id="question"
-                               className="mySelect"
+                               style={{
+                                   backgroundColor: "darkgrey",
+                                   margin: "10px 5px",
+                                   borderRadius: "5px",
+                                   padding: "15px 30px",
+                                   outline: "none",
+                                   border:"none",
+                                   marginLeft:"20px",
+                                   fontSize: "14px",
+                                   boxShadow: "rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0 3px 7px -3px"
+                               }}
                                value={city}
                                onChange={(e) => setCity(e.target.value)}
                                type="text"/>
@@ -71,7 +79,9 @@ const App = () => {
                     <button style={{
                         width: '37%',
                         height: "30px",
-                        backgroundColor: "#5c616e",
+                        outline: "none",
+                        border:"none",
+                        backgroundColor: "blue",
                         borderRadius: "5px",
                         marginBottom: "40px"
                     }}>submit
