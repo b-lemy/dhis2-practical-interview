@@ -8,14 +8,15 @@ const App = () => {
     const [Temp, setTemperature] = useState()
     const [winspeed, setwinspeed] = useState()
     const [humidity, sethumidity] = useState()
+    const [formSubmitted, setFormSubmitted] = useState(false);
 
     const [Results, setResults] = useState([])
 
 
     const apiKey = "0890c0e9739f075f5dca132d9ee4c344"; // Replace with your actual API key
     // const city = 'CITY_NAME'; // Replace with the desired city name
-    // const apiUrl = `http://api.weatherstack.com/current?access_key=${apiKey}&query=${city}`;
-    const apiUrl = `http://api.weatherstack.com/current?access_key=${apiKey}&query=new york`;
+    const apiUrl = `http://api.weatherstack.com/current?access_key=${apiKey}&query=${city}`;
+    // const apiUrl = `http://api.weatherstack.com/current?access_key=${apiKey}&query=new york`;
     // const apiUrl = true
 
 
@@ -42,14 +43,23 @@ const App = () => {
             };
 
             getWeatherData();
-        }, [apiUrl]
+
+        setFormSubmitted(false);
+        }, [formSubmitted, apiUrl]
+
     )
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Set formSubmitted to true when the form is submitted
+        setFormSubmitted(true);
+    };
 
     return (
         <div className="App">
             <h1>Weather Application</h1>
             <div className="form">
-                <form onSubmit={onsubmit}>
+                <form onSubmit={handleSubmit}>
                     <div className="select">
                         <label className="label" htmlFor="question">Select the City of your Choice</label>
                         <input id="question"
@@ -70,7 +80,7 @@ const App = () => {
             </div>
 
             <div>
-                <p>Results</p>
+                <p>Results for {city}</p>
                 <p>Temperature of the city : {Temp}</p>
                 <p>Humidity of the city : {humidity}</p>
                 <p>Wind Speed of the city : {winspeed}</p>

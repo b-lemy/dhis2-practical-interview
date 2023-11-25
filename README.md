@@ -1,35 +1,31 @@
 # Design Decisions
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The project is SPA where it request API to Weatherstack API built in React
 
-## Available Scripts
+<center><h3>Repository Contents by Project Task</h3> </center>
 
-In the project directory, you can run:
+| Module                    | Status | Description                                                   |
+|---------------------------|--------|---------------------------------------------------------------|
+| User Inputs               | Done   | User enters the city and press enter                          |
+| Weather Details           | Done   | Details to be displayed as requested temp humidity wind speed |
+| Responsive user interface | Done   | Practiced                                                     |
 
-### `npm start`
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<center> <h2>General Use</h2> </center>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#####  Syntax
+Steps After cloning the repo:
 
-### `npm test`
+       move to project directory
+     npm install
+     npm run start
+     Then you can start your request for weather
+    
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
+> **Note**
+>
+> Error handling was performed with try and catch mechanism
+> Api Requests were handled with Axios
